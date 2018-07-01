@@ -150,17 +150,17 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     </div><br>
     <p>Pide un chofer ahora:</p>
 
-    <form action="/action_page.php" target="_blank">
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Nombre" required name="nombre"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="email"></p>
-      <p><input class="w3-input w3-padding-16" type="number" placeholder="telefono" required name="telefono"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Placa" required name="placa"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Descripcion Vehiculo" required name="vehiculo"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Ubicacion Actual" required name="ubicacion"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Destino" required name="destino"></p>
+    <form action="/action_page.php" target="_blank" id="Formulario">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Nombre" required name="nombre" id="nombre"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="email" id="email"></p>
+      <p><input class="w3-input w3-padding-16" type="number" placeholder="telefono" required name="telefono" id="telefono"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Placa" required name="placa" id="placa"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Descripcion Vehiculo" required name="vehiculo" id="vehiculo"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Ubicacion Actual" required name="ubicacion" id="ubicacion"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Destino" required name="destino" id="destino"></p>
       <p>
         <button class="w3-button w3-light-grey w3-padding-large" type="submit">
-          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+          <i class="fa fa-paper-plane"></i> Solicitar
         </button>
       </p>
     </form>
@@ -169,6 +169,6 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
 <!-- END PAGE CONTENT -->
 </div>
-
+<script src="main.js"></script>
 </body>
 </html>
