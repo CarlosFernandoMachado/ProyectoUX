@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Chofer Sobrio </title>
+  <link href="style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="todo">
+
+    <h2 style="font-size: 300%">
+      <img src="homero_bender.jpg" alt="Logo" style="width:100px;height:100px;"> Chofer Sobrio</h2>
+    <div id="regi">
+      <form action="mailto:testsubjectno2@hotmail.com" method="post" enctype="text/plain">
+        Nombre:
+        <br>
+        <input type="text" name="Nombre">
+        <br>
+        <br> Numero de celular:
+        <br>
+        <input type="tel" name="Telefono">
+        <br>
+        <br> Placa:
+        <br>
+        <input type="text" name="Placa">
+        <br>
+        <br> Descripcion de vehiculo:
+        <br>
+        <textarea name="message" rows="10" cols="30"> </textarea>
+        <br>
+        <br> Ubicacion Actual:
+        <br>
+        <input type="text" name="Ubicacion Actual">
+        <br>
+        <br> Destino:
+        <br>
+        <input type="text" name="Destino" >
+        <br>
+        <br>
+        <p id="demo"></p>
+    </div>
+    <br>
+    <br>
+    
+    <script>
+      var x = document.getElementById("demo")
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+          x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+      }
+      function showPosition(position) {
+        x.innerHTML = position.coords.latitude +
+          "," + position.coords.longitude;
+          
+      }
+    </script>
+
+    <input type="submit" value="Send" onclick="alert('Se ha avisado a nuestro choferes')">
+    <input type="button" value="Ubicacion" onclick="getLocation()">
+    <input type="reset" value="Reset">
+    </form>
+
+  </div>
+
+</body>
+
+</html>
