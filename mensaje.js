@@ -26,55 +26,6 @@ function submitform(e) {
     saveMessage(nombre, email, telefono, placa, vehiculo, ubicacion, destino);
 }
 
-//ubicacion exacta
-var x = document.getElementById("ubicacion-exacta");
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
-function showPosition(position) {
-    x.innerHTML = position.coords.latitude +
-        "," + position.coords.longitude;
-
-}
-
-firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      // User is signed in.
-      document.getElementById('Login').style.display = "none";
-      document.getElementById('Logged').style.display = "block";
-      var user = document.getElementById("currentuser");
-      user.innerHTML = firebase.auth().currentUser.email;
-
-    } else {
-      // No user is signed in.
-      document.getElementById('Login').style.display = "block";
-      document.getElementById('Logged').style.display = "none";
-    }
-  });
-
-//login
-function login(){
-    var loginemail = getInputVal('login-email');
-    var loginpass = getInputVal('login-pass');
-    firebase.auth().signInWithEmailAndPassword(loginemail, loginpass).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // ...
-        window.alert("Error: " + errorMessage);
-      });
-
-}
-
-//logout
-function logout(){
-    firebase.auth().signOut();
-}
-
 //funcio get
 function getInputVal(id) {
     return document.getElementById(id).value;
