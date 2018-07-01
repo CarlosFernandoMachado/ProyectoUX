@@ -9,7 +9,8 @@ var config = {
   };
   firebase.initializeApp(config);
 
-  
+//referencia a mensaje
+var messageref = firebase.database().ref('messages');
 //recibir datos de submit
 document.getElementById('Formulario').addEventListener('submit',submitform);
 
@@ -22,9 +23,24 @@ function submitform(e){
     var vehiculo = getInputVal('vehiculo');
     var ubicacion = getInputVal('ubicacion');
     var destino = getInputVal('destino');
+    saveMessage(nombre,email,telefono,placa,vehiculo,ubicacion,destino);
 }
 
 //funcio get
 function getInputVal(id){
     return document.getElementById(id).value;
+}
+
+//guardar mensaje en firebase
+function saveMessage(nombre,email,telefono,placa,vehiculo,ubicacion,destino){
+    var newMessageRef = messageref.push();
+    newMessageRef.set({
+        nombre: nombre,
+        email: email,
+        telefono: telefono,
+        placa: placa,
+        vehiculo: vehiculo,
+        ubicacion: ubicacion,
+        destino: destino
+    });
 }
