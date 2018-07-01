@@ -31,6 +31,9 @@ function getInputVal(id){
     return document.getElementById(id).value;
 }
 
+//clear
+document.getElementById('Formulario').reset();
+
 //guardar mensaje en firebase
 function saveMessage(nombre,email,telefono,placa,vehiculo,ubicacion,destino){
     var newMessageRef = messageref.push();
