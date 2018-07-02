@@ -57,6 +57,25 @@ firebase.auth().onAuthStateChanged(function(user) {
   });
 
 
+//login
+function login(){
+    var loginemail = getInputVal('login-email');
+    var loginpass = getInputVal('login-pass');
+    firebase.auth().signInWithEmailAndPassword(loginemail, loginpass).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ...
+        window.alert("Error: " + errorMessage);
+      });
+
+}
+
+//logout
+function logout(){
+    firebase.auth().signOut();
+}
+
 //funcio get
 function getInputVal(id) {
     return document.getElementById(id).value;
