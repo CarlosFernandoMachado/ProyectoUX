@@ -26,6 +26,21 @@ function submitform(e) {
     saveMessage(nombre, email, telefono, placa, vehiculo, ubicacion, destino);
 }
 
+//ubicacion exacta
+var x = document.getElementById("ubicacion-exacta");
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+function showPosition(position) {
+    x.innerHTML = position.coords.latitude +
+        "," + position.coords.longitude;
+
+}
+
 //funcio get
 function getInputVal(id) {
     return document.getElementById(id).value;
