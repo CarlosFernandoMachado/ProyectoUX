@@ -41,6 +41,22 @@ function showPosition(position) {
 
 }
 
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in.
+      document.getElementById('Login').style.display = "none";
+      document.getElementById('Logged').style.display = "block";
+      var user = document.getElementById("currentuser");
+      user.innerHTML = firebase.auth().currentUser.email;
+
+    } else {
+      // No user is signed in.
+      document.getElementById('Login').style.display = "block";
+      document.getElementById('Logged').style.display = "none";
+    }
+  });
+
+
 //funcio get
 function getInputVal(id) {
     return document.getElementById(id).value;
