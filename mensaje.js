@@ -56,7 +56,6 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
   });
 
-
 //login
 function login(){
     var loginemail = getInputVal('login-email');
